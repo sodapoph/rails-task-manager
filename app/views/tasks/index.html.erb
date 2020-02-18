@@ -1,0 +1,12 @@
+<div class="container mx-auto" style="width: 300px;">
+    <h1>Today's Tasks:</h1>
+  <% @tasks.each do |task| %>
+    <p><%= task.completed %></>
+    <h2><%= link_to task.title, task_path(task) do %></h2>
+      <i class="far fa-check-square" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+</div>
+
+
+
