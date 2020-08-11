@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="container mx-auto" style="width: 500px;">
   <h1>Today's Tasks:</h1>
   <div class="task-index">
     <% @tasks.each do |task| %>
@@ -17,5 +17,8 @@
   </div>
   <div class="mx-auto" style="text-align: center;">
     <%= link_to "Add a new task?", new_path(@task) %>
+  </div>
+  <div>
+    <%= image_tag "desk.png" %>
   </div>
 </div>
