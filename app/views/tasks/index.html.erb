@@ -1,13 +1,21 @@
-<div class="container mx-auto" style="width: 300px;">
-    <h1>Today's Tasks:</h1>
-  <div class="d-flex align-content-center">
+<div class="container mx-auto">
+  <h1>Today's Tasks:</h1>
+  <div class="task-index">
     <% @tasks.each do |task| %>
       <% if task.completed %>
-        <i class="far fa-check-square"></i>
-        <% else %>
-        <i class="far fa-square"></i>
+        <div class="item-box">
+          <i class="fas fa-check-square"></i>
+          <h2><%= link_to task.title, task_path(task) %></h2>
+        </div>
+      <% else %>
+        <div class="item-box">
+          <i class="far fa-square"></i>
+          <h2><%= link_to task.title, task_path(task) %></h2>
+        </div>
       <% end %>
-    <h2><%= link_to task.title, task_path(task) %></h2>
     <% end %>
+  </div>
+  <div class="mx-auto" style="text-align: center;">
+    <%= link_to "Add a new task?", new_path(@task) %>
   </div>
 </div>
